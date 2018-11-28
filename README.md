@@ -20,6 +20,8 @@ DROP TABLE towns;
    name varchar(255),
    state varchar(255),
    timezone varchar(255),
+   lat DECIMAL(10, 8) NOT NULL,
+   lng DECIMAL(11, 8) NOT NULL,
    PRIMARY KEY (id)
  ) ENGINE=INNODB;`
 
