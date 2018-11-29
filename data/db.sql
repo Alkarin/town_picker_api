@@ -23,10 +23,12 @@ DROP TABLE IF EXISTS `towns`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `towns` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `state` varchar(255) DEFAULT NULL,
-  `timezone` varchar(255) DEFAULT NULL,
+  `timezone` decimal(5,2) NOT NULL,
+  `lat` decimal(10,8) NOT NULL,
+  `lng` decimal(11,8) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-27 12:01:46
+-- Dump completed on 2018-11-29  0:12:43

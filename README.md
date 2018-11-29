@@ -7,7 +7,7 @@
 ## Database commands (mysql)
 
 #### View contents
-select * from towns;
+SELECT * from towns;
 
 #### DELETE
 DROP TABLE towns;
@@ -25,11 +25,3 @@ DROP TABLE towns;
    PRIMARY KEY (id)
  ) ENGINE=INNODB;`
 
-`CREATE TABLE towns_type (
-  id INT NOT NULL AUTO_INCREMENT,
-  towns_id INT,
-  type varchar(255),
-  INDEX par_ind (towns_id),
-  FOREIGN KEY (towns_id) REFERENCES towns(id) ON DELETE CASCADE,
-  PRIMARY KEY (id)
-) ENGINE=INNODB;`
