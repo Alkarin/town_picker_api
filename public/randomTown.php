@@ -3,4 +3,4 @@
 <?php require_once("../includes/headers.php") ?>
 
 <?php
-getCities($connection);
+getRandomTown($connection);

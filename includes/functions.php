@@ -1,10 +1,9 @@
 <?php require_once("../includes/headers.php") ?>
-<?php require_once("../data/Town.php") ?>
 
 <?php
 function insertTown($connection, $data) {
-    $name = mysqli_real_escape_string($connection,$data['cityName']);
-    $state = mysqli_real_escape_string($connection,$data['cityState']);
+    $name = mysqli_real_escape_string($connection,$data['townName']);
+    $state = mysqli_real_escape_string($connection,$data['townState']);
     $timezone = mysqli_real_escape_string($connection,$data['timezoneOffset']);
     $lat = mysqli_real_escape_string($connection,$data['latitude']);
     $lng = mysqli_real_escape_string($connection,$data['longitude']);
@@ -19,8 +18,7 @@ function insertTown($connection, $data) {
     handleQueryResult($result);
 }
 
-function getRandomCity($connection) {
-
+function getRandomTown($connection) {
     $town  = array();
     $query = "SELECT * FROM towns ORDER BY RAND() LIMIT 1";
     $result = mysqli_query($connection, $query);
@@ -28,8 +26,8 @@ function getRandomCity($connection) {
     if ($result->num_rows > 0) {
         // output data of each row
         while($column = $result->fetch_assoc()) {
-            $town['cityName'] = $column['name'];
-            $town['cityState'] = $column['state'];
+            $town['townName'] = $column['name'];
+            $town['townState'] = $column['state'];
             $town['timezoneOffset'] = $column['timezone'];
             $town['latitude'] = $column['lat'];
             $town['longitude'] = $column['lng'];
@@ -41,7 +39,7 @@ function getRandomCity($connection) {
 }
 
 
-function getCities($connection) {
+function getTowns($connection) {
     $town = array();
     $towns  = array();
     $query = "SELECT * FROM towns";
@@ -51,8 +49,8 @@ function getCities($connection) {
     if ($result->num_rows > 0) {
         // output data of each row
         while($column = $result->fetch_assoc()) {
-            $town['cityName'] = $column['name'];
-            $town['cityState'] = $column['state'];
+            $town['townName'] = $column['name'];
+            $town['townState'] = $column['state'];
             $town['timezoneOffset'] = $column['timezone'];
             $town['latitude'] = $column['lat'];
             $town['longitude'] = $column['lng'];

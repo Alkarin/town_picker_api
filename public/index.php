@@ -1,6 +1,6 @@
 <?php require_once("../includes/db_connection.php") ?>
 <?php require_once("../includes/functions.php") ?>
-<?php require_once("addCity.php") ?>
+<?php require_once("addTown.php") ?>
 
 <?php
 // CORS ACCEPTANCE
